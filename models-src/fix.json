@@ -1,0 +1,4 @@
+{
+  "_note": "Chỉnh hướng cho file không theo quy ước (mặt trước phải hướng +Z). rotateY tính bằng độ, xoay quanh trục Y lên trên.",
+  "furniture/pc-cabinet.glb": { "rotateY": 180, "source": "GZ_Kiosk_Right.glb — màn hình quay về −Z trong file gốc" }
+}

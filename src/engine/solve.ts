@@ -553,12 +553,13 @@ export function solve(s: State): Plan {
   if (s.pc !== 'none') {
     const hand = tees[0].hand;
     const wall: 'L' | 'R' = s.stSide !== 'auto' ? s.stSide : hand === 'L' ? 'L' : 'R';
-    const dep = s.pc === 'cab' ? 20 * IN : s.pc === 'shelf' ? 1.25 : 2;
-    const len = s.pc === 'cab' ? 2.5 : s.pc === 'shelf' ? 3 : 2;
+    // 'cab' = kiosk màn cảm ứng (models/furniture/pc-cabinet.glb): 0,69 × 1,39 × 0,26 m, lưng áp tường
+    const dep = s.pc === 'cab' ? 0.26 / 0.3048 : s.pc === 'shelf' ? 1.25 : 2;
+    const len = s.pc === 'cab' ? 0.69 / 0.3048 : s.pc === 'shelf' ? 3 : 2;
     const zMax = D - len / 2 - 0.1;
     const zz = s.stZ != null ? clamp(s.stZ, len / 2 + 0.1, zMax) : clamp(Math.max(teeZ + 1, D - len / 2 - 0.4), len / 2 + 0.1, zMax);
     const x0 = wall === 'R' ? W - dep : 0, x1 = wall === 'R' ? W : dep;
-    const deskH = s.pc === 'stand' ? 3.6 : 3.0;
+    const deskH = s.pc === 'cab' ? 1.39 / 0.3048 : s.pc === 'stand' ? 3.6 : 3.0;
     const desk = box(x0, x1, floorRaise, floorRaise + deskH, zz - len / 2, zz + len / 2);
     const tvs: Box[] = [];
     const tvW = (s.tvIn === 43 ? 37.5 : 28) * IN, tvH = (s.tvIn === 43 ? 21.1 : 15.7) * IN;

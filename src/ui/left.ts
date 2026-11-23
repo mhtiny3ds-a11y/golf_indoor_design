@@ -53,7 +53,7 @@ export function renderLeft(s: State, r: Result, lists: Lists, open: Set<string>)
     ${lenInput(`fix.${i}.pos`, f.pos, m, f.wall === 'back' ? 'Tâm, tính từ tường trái' : 'Tâm, tính từ tường màn')}
     <div class="row2">${lenInput(`fix.${i}.w`, f.w, m, 'Rộng')}${lenInput(`fix.${i}.d`, f.d, m, 'Sâu')}</div></div>`).join('');
 
-  const pcOpts: [string, string][] = [['none', 'Không'], ['cab', 'Tủ PC + màn cảm ứng 27"'], ['shelf', 'PC tower + kệ tường + màn 27"'], ['stand', 'Chân đứng có khay laptop + màn 32/43"']];
+  const pcOpts: [string, string][] = [['none', 'Không'], ['cab', 'Kiosk màn cảm ứng (tủ PC)'], ['shelf', 'PC tower + kệ tường + màn 27"'], ['stand', 'Chân đứng có khay laptop + màn 32/43"']];
   const extrasSum = [s.seatOn ? 'Ghế' : '', s.pc !== 'none' ? 'Máy tính' : ''].filter(Boolean).join(', ') || 'Không';
   const extras = `
     <div class="field"><span>Ghế ngồi</span>${seg('seatOn', String(s.seatOn), [['false', 'Không'], ['true', 'Thêm ghế dọc tường sau']], 'Ghế')}</div>

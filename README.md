@@ -30,7 +30,9 @@ Bật một lần: **Settings → Pages → Build and deployment → Source: Git
 `npm run dev` / `npm run build` tự chạy `npm run models` để chuẩn hoá (đổi vật liệu specular-glossiness sang metal-roughness, gộp node)
 và ghi ra `public/models/` (không commit). Vật nào chưa có file thì app dùng khối hình thay thế.
 
-Đã có: golfer (tư thế lên gậy, tĩnh — chưa có animation swing).
+Đã có: golfer (tư thế lên gậy, tĩnh — chưa có animation swing), kiosk màn cảm ứng (`furniture/pc-cabinet.glb`, mục Máy tính → Kiosk).
+
+File không theo quy ước hướng (mặt trước +Z) được sửa trong `models-src/fix.json`, ví dụ `{"furniture/pc-cabinet.glb": {"rotateY": 180}}`.
 
 ## Cấu trúc
 

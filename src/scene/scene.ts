@@ -67,7 +67,9 @@ export class SceneView {
     this.scene.add(this.root);
     new ResizeObserver(() => this.resize()).observe(host);
     this.bindDrag();
-    requestModel('people/golfer.glb', () => { if (this.plan) this.update(this.plan); });
+    const rebuild = () => { if (this.plan) this.update(this.plan); };
+    requestModel('people/golfer.glb', rebuild);
+    requestModel('furniture/pc-cabinet.glb', rebuild);
     const loop = (t: number) => { this.tick(t); requestAnimationFrame(loop); };
     requestAnimationFrame(loop);
   }
@@ -307,7 +309,20 @@ export class SceneView {
       }
     }
     for (const f of p.fixtures) this.boxMesh(f, this.mat(f.kind === 'cabinet' ? 0x5a4632 : 0x3b302a));
-    if (p.pc) {
+    const kiosk = p.pc && p.state.pc === 'cab' ? getModel('furniture/pc-cabinet.glb') : null;
+    if (p.pc && kiosk) {
+      // Mô hình chuẩn: mét, mặt trước (màn hình) hướng +Z. Lưng áp tường, màn quay vào phòng.
+      const d = p.pc.desk, b = kiosk.box;
+      const obj = kiosk.instance;
+      obj.position.set(-(b.min.x + b.max.x) / 2, -b.min.y, -(b.min.z + b.max.z) / 2);
+      const g = new THREE.Group(); g.add(obj); g.scale.setScalar(1 / 0.3048);
+      g.rotation.y = p.pc.wall === 'R' ? -Math.PI / 2 : Math.PI / 2;
+      g.position.copy(this.v((d.x0 + d.x1) / 2, d.y0, (d.z0 + d.z1) / 2));
+      this.root.add(g);
+      for (const tv of p.pc.tvs) this.boxMesh(tv, this.mat(0x2c6fb0, { emissive: 0x153a66, emissiveIntensity: 0.8 }));
+      this.label('pc', 'Kiosk', this.v((d.x0 + d.x1) / 2, d.y1 + 0.5, (d.z0 + d.z1) / 2));
+      this.focusTargets.set('pc', this.v((d.x0 + d.x1) / 2, d.y1, (d.z0 + d.z1) / 2));
+    } else if (p.pc) {
       this.boxMesh(p.pc.desk, this.mat(C.pc));
       const d = p.pc.desk, inner = p.pc.wall === 'R' ? d.x0 : d.x1;
       if (!(p.state.pc === 'stand' && p.state.tvs > 0 && !p.state.keepDesk)) {
