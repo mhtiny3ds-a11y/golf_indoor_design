@@ -1,0 +1,8 @@
+{
+  "items": [
+    {"id":"gtrak","name":"G-TRAK (Shop Indoor Golf)","mount":"quanh ray cửa gara, treo trước cửa đóng ở tường màn; không có ray → Wall Mount Kit","width_ft":[7,14],"railHeight_in":[96,103],"doorType":"cửa một trục cuộn","drawVi":"Vẽ từ cuộn xuống sàn, dải đen trên/dưới","estimate":true},
+    {"id":"stealth","name":"Par2Pro Stealth","mount":"cuộn lên trần","sizes":["S8","S9","S10","S11","S12","S13","S14","S15","S16"],"pictureWidth_ft":[8,15],"screenHeight_in":111,"projectableHeight_in":107.5,"wallGap_in":12,"estimate":true},
+    {"id":"proscreen","name":"HomeCourse ProScreen 180","mount":"treo dưới trần","belowCeiling_in_min":6,"wallGap_in":18,"height_ft":8.5,"installHeight_ft":8.5,"maxPictureWidth_ft":14,"aspect":"16:9","remote":"pin","estimate":true}
+  ],
+  "check": "Không vật treo nào (ống gió, ray motor cửa gara) nằm trong vùng màn đi xuống."
+}

@@ -1,0 +1,16 @@
+{
+  "brand": {
+    "name": "GolfCons Sim Builder",
+    "tagline": "Lập kế hoạch phòng golf 3D miễn phí",
+    "logo": "assets/logo.svg",
+    "primaryColor": "#d8ef3a",
+    "bgColor": "#0f1a17"
+  },
+  "leadEndpoint": "",
+  "contact": {"email": "", "phone": "", "zalo": ""},
+  "currency": "VND",
+  "items": {
+    "_example": {"url": "", "code": "", "codeNote": "", "priceVND": null},
+    "sig12": {"url": "", "code": "", "priceVND": null}
+  }
+}

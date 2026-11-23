@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GolfCons Sim Builder</title>
+<meta name="description" content="Lập kế hoạch phòng golf 3D miễn phí: nhập kích thước phòng, app tự bố trí màn, tee, launch monitor, máy chiếu và báo cái gì vừa, chật hay không vừa.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><circle cx="16" cy="16" r="15" fill="#d8ef3a"/><path d="M12 7v18M12 8l9 3.5-9 3.5" stroke="#0f1a17" stroke-width="2.4" fill="none" stroke-linejoin="round"/><ellipse cx="16" cy="25" rx="8" ry="2" fill="#0f1a17" opacity=".35"/></svg></div>
+      <div><b><span id="brandName">GolfCons</span> <span class="sb">SIM BUILDER</span></b><small id="tagline">Lập kế hoạch phòng golf 3D miễn phí</small></div></div>
+    <div class="actions">
+      <button type="button" class="btn ghost" id="fullBtn">Toàn màn hình</button>
+      <button type="button" class="btn primary" id="leadBtn">Nhận báo giá + mã</button>
+      <button type="button" class="btn" id="shareBtn">Chia sẻ</button>
+      <button type="button" class="btn" id="resetBtn">Làm lại</button>
+    </div>
+  </header>
+  <main class="cols">
+    <aside id="left" class="col-left" aria-label="Cấu hình"></aside>
+    <section class="col-mid" aria-label="Mô hình 3D">
+      <div class="vp-bar">
+        <div class="seg views" id="views" role="group" aria-label="Góc nhìn">
+          <button type="button" data-view="3d" class="on">3D</button><button type="button" data-view="top">Trên</button><button type="button" data-view="side">Cạnh</button><button type="button" data-view="front">Trước</button>
+        </div>
+        <button type="button" class="btn sm" id="moveBtn" aria-pressed="false">Tự di chuyển</button>
+        <button type="button" class="btn sm" id="swingBtn">Phát swing</button>
+        <div class="status" id="status" aria-live="polite"></div>
+      </div>
+      <div id="viewport" class="viewport"></div>
+      <div class="vp-tools">
+        <button type="button" id="zoomIn" aria-label="Phóng to">+</button>
+        <button type="button" id="zoomOut" aria-label="Thu nhỏ">−</button>
+        <button type="button" id="resetCam" aria-label="Đặt lại camera">↺</button>
+        <button type="button" id="snap" aria-label="Chụp ảnh cấu hình">⤓</button>
+      </div>
+    </section>
+    <aside id="right" class="col-right" aria-label="Kết quả"></aside>
+  </main>
+  <footer class="foot">Kết quả chỉ là ước tính, không phải cam kết. Luôn thử khoảng trống bằng các cú swing chậm với gậy dài nhất trước khi đánh hết lực: kiểm tra trần, tường, đèn, launch monitor, máy chiếu và người đứng gần.</footer>
+</div>
+<div id="modal" class="modal" hidden></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

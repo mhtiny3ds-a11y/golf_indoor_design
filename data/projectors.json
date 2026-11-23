@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "source": "Tham số runtime của app gốc + bảng công bố (BenQ/Optoma spec, đọc 3 & 11/10/2026).",
+    "fields": {
+      "r0,r1": "throw ratio min/max (zoom)",
+      "off": "offset cố định (1.025 = 102,5%: thấu kính cao hơn mép trên ảnh 2,5% chiều cao ảnh). null = có lens shift",
+      "vs,hs": "lens shift dọc/ngang (phần của chiều cao/rộng ảnh)",
+      "vlo": "đáy dải offset khi lens shift (0.06 → tối thiểu 106%)",
+      "asp": "tỉ lệ gốc; null = 16:9 (1.7778)",
+      "ksd": "loại keystone",
+      "fill": "các tỉ lệ Screen Fill (null = không công bố)",
+      "dim": "[rộng, cao, sâu] ft",
+      "res": "độ phân giải gốc – CẦN XÁC MINH (từ kiến thức chung, không lấy từ app)"
+    }
+  },
+  "items": [
+    {"id":"ak700st","name":"BenQ AK700ST","r0":0.69,"r1":0.83,"off":1.025,"ksd":"3D","dim":[0.996,0.369,0.769],"fill":["16:9","16:10","4:3","1:1"],"res":"4K"},
+    {"id":"ak800st","name":"BenQ AK800ST","r0":0.69,"r1":0.83,"off":1.025,"ksd":"3D","dim":[1.273,0.459,0.99],"fill":["16:9","16:10","3:2","4:3","5:4","1:1"],"res":"4K"},
+    {"id":"ak900st","name":"BenQ AK900ST","r0":0.81,"r1":0.89,"off":null,"vs":0.6,"hs":0.23,"ksd":"3D","dim":[1.709,0.546,1.15],"fill":["16:9","16:10","3:2","4:3","5:4","1:1"],"res":"4K"},
+    {"id":"ah700st","name":"BenQ AH700ST","r0":0.69,"r1":0.83,"off":1.025,"ksd":"2D","dim":[0.996,0.369,0.769],"fill":["16:9","16:10","4:3","1:1"],"res":"1080p"},
+    {"id":"ah500st","name":"BenQ AH500ST","r0":0.499,"r1":0.499,"off":1.12,"ksd":"2D","dim":[1.05,0.428,0.837],"fill":["16:9","16:10","4:3","1:1"],"res":"1080p"},
+    {"id":"ah30st","name":"BenQ AH30ST","r0":0.69,"r1":0.83,"off":1.025,"ksd":"2D","res":"1080p"},
+    {"id":"tk710sti","name":"BenQ TK710STi","r0":0.69,"r1":0.83,"off":1.025,"ksd":"3D","dim":[0.998,0.369,0.832],"fill":null,"res":"4K"},
+    {"id":"th671st","name":"BenQ TH671ST","r0":0.69,"r1":0.83,"off":1.025,"ksd":"1D","res":"1080p"},
+    {"id":"aw30st","name":"BenQ AW30ST","r0":0.72,"r1":0.87,"off":1.0,"asp":1.6,"ksd":"2D","dim":[0.996,0.352,0.724],"fill":["16:9","16:10","4:3","1:1"],"res":"WXGA/WUXGA?"},
+    {"id":"lw600st","name":"BenQ LW600ST+","r0":0.72,"r1":0.87,"off":1.0,"asp":1.6,"ksd":"2D","res":"WXGA"},
+    {"id":"lk936st","name":"BenQ LK936ST","r0":0.81,"r1":0.89,"off":null,"vs":0.6,"hs":0.23,"ksd":"3D","dim":[1.365,0.545,1.152],"fill":null,"res":"4K"},
+    {"id":"lu935st","name":"BenQ LU935ST","r0":0.81,"r1":0.89,"off":null,"vs":0.6,"hs":0.23,"asp":1.6,"ksd":"2D","dim":[1.365,0.545,1.152],"fill":null,"res":"WUXGA"},
+    {"id":"lk830st","name":"BenQ LK830ST","r0":0.496,"r1":0.496,"off":1.14,"ksd":"2D","fill":["16:9","16:10","4:3","5:4","1:1"],"res":"4K"},
+    {"id":"gt2000","name":"Optoma GT2000HDR","r0":0.496,"r1":0.496,"off":1.16,"ksd":"2D","fill":null,"res":"1080p"},
+    {"id":"gt2400","name":"Optoma GT2400HDR","r0":0.496,"r1":0.496,"off":1.16,"ksd":"2D","fill":null,"res":"1080p","note":"offset 116% ±5%"},
+    {"id":"zk431st","name":"Optoma ZK431ST-B","r0":0.496,"r1":0.496,"off":1.14,"ksd":"2D","fill":null,"res":"4K","ksNoteVi":"Keystone và Four Corners bị tắt khi bật Low Latency."},
+    {"id":"zk521st","name":"Optoma ZK521ST-B","r0":0.79,"r1":0.79,"off":null,"vs":0.75,"vlo":0.06,"ksd":"2D","fill":null,"res":"4K","note":"Lens shift chỉ lên/xuống, offset 106%–125% (spec ghi 104%, calculator dừng ở 106%).","ksNoteVi":"Keystone và Four Corners bị tắt khi bật Low Latency."},
+    {"id":"zw350st","name":"Optoma ZW350ST","r0":0.521,"r1":0.521,"off":1.15,"asp":1.6,"ksd":"2D","res":"WXGA"},
+    {"id":"bu53rg","name":"LG BU53RG","r0":0.94,"r1":1.14,"off":null,"vs":0.5,"ksd":null,"res":"4K"},
+    {"id":"l795se","name":"Epson PowerLite L795SE","r0":0.79,"r1":1.36,"off":null,"vs":0.5,"asp":1.6,"ksd":"2D","res":"WUXGA"}
+  ]
+}

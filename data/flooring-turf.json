@@ -1,0 +1,15 @@
+{
+  "turfThickness_in": 0.5,
+  "partnerTurf": {"maxRollWidth_ft": 15, "seams": "Chạy ngang phòng, tại mép trước hoặc mép sau thảm", "coverage": ["mat+3ft (mặc định)","enclosure length","wall to wall","none"], "estimate": true},
+  "sigLandingPad": {"forEnclosures": ["sig10","sig12"], "sizes_ft": null, "note": "Mỗi enclosure một cỡ; dày 1/2 in. Chọn nó → chọn SIG lớn nhất vừa phòng. Kích thước cần tra trang Shop Indoor Golf."},
+  "sigproFlooring": {
+    "height_in": 2.375,
+    "edge": "vát",
+    "hittingStrip_in": [12, 28],
+    "cups": 4,
+    "replacesMat": true,
+    "sizes_ft": {"sig8": [9.67, 15.5], "sig10": [11.58, 15.5], "sig12": [13.5, 15.5]},
+    "note": "Vị trí dải đánh và cốc là ước tính từ ảnh."
+  },
+  "recess": {"rule": "Nâng sàn bằng gym tile / ván 1 in cho tới khi mặt cỏ bằng mặt thảm; thảm 2,5 in → 2 lớp 1 in. Trần, màn, enclosure đo từ sàn đã nâng."}
+}

@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "source": "Bảng công bố trên trang gốc (thông số hãng xe đọc 12/10/2026, bản lớn nhất của mỗi model). L = dài, W = rộng kể gương (mirrors=false: không kể gương), H = cao. Đơn vị ft.",
+    "rules": {"doorSideSpare_in":3,"insideDoor_in":6,"frontGap_in":6,"driverDoor_ft":2.5,"roofGap_in":2,"carToSim_ft":2.5}
+  },
+  "items": [
+    {"id":"f150","name":"Ford F-150 SuperCrew, thùng 5,5 ft","L":19.33,"W":8.0,"mirrors":true,"H":6.58},
+    {"id":"ram1500","name":"Ram 1500 Crew Cab, thùng 5'7\"","L":19.33,"W":6.75,"mirrors":false,"H":6.67},
+    {"id":"tahoe","name":"Chevrolet Tahoe","L":17.58,"W":7.83,"mirrors":true,"H":6.42},
+    {"id":"expedition","name":"Ford Expedition","L":17.5,"W":7.92,"mirrors":true,"H":6.58},
+    {"id":"maverick","name":"Ford Maverick","L":16.75,"W":7.0,"mirrors":true,"H":5.75},
+    {"id":"explorer","name":"Ford Explorer","L":16.58,"W":7.42,"mirrors":true,"H":5.92},
+    {"id":"grandcherokee","name":"Jeep Grand Cherokee","L":16.17,"W":7.08,"mirrors":true,"H":5.92},
+    {"id":"mustang","name":"Ford Mustang","L":15.83,"W":6.83,"mirrors":true,"H":4.58},
+    {"id":"bronco","name":"Ford Bronco 4 cửa","L":15.83,"W":7.25,"mirrors":true,"H":6.58},
+    {"id":"modely","name":"Tesla Model Y","L":15.75,"W":7.0,"mirrors":true,"H":5.33},
+    {"id":"mache","name":"Ford Mustang Mach-E","L":15.58,"W":6.92,"mirrors":true,"H":5.42},
+    {"id":"crv","name":"Honda CR-V","L":15.42,"W":6.17,"mirrors":false,"H":5.58},
+    {"id":"rav4","name":"Toyota RAV4 Hybrid","L":15.08,"W":6.08,"mirrors":false,"H":5.58}
+  ],
+  "vn_todo": {
+    "note": "Bổ sung xe phổ biến tại Việt Nam – CẦN tra thông số chính hãng (mm) trước khi dùng, chưa điền số.",
+    "candidates": ["Toyota Vios","Hyundai Accent","Mitsubishi Xpander","Toyota Fortuner","Ford Ranger","Ford Everest","Mazda CX-5","Kia Seltos","Honda CR-V (VN)","VinFast VF 8","VinFast VF 9","Mercedes-Benz GLC","Lexus RX","Range Rover"]
+  }
+}

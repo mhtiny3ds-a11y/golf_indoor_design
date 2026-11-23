@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "source": "Runtime app gốc + bảng công bố (trang sản phẩm Shop Indoor Golf, spec sheet Carl's Place, bản vẽ GolfIn).",
+    "fields": {"w,h,d":"kích thước ngoài (ft)","sw,sh":"mặt chiếu (ft)","floor":"có sàn/khung đáy riêng","deep":"có tuỳ chọn độ sâu 5/8/10/15","pipe":"đường kính ống khung (ft)","needW,needH":"phòng tối thiểu = w+4in, h+2in","minRoom":"SimBooth: phòng tối thiểu theo GolfIn [rộng, sâu, trần]"},
+    "fitRule": "enc.w + 2×(2 in) ≤ W; enc.h + 2 in ≤ trần hiệu dụng; mặt trước enclosure cách tường 12 in"
+  },
+  "items": [
+    {"id":"sig8","brand":"SIG","name":"SIG8","w":8.33,"h":8.33,"d":5,"sw":7.58,"sh":7.58,"ratio":"1:1","needW":8.67,"needH":8.5,"landingPad":false,"sigproFloor":[9.67,15.5]},
+    {"id":"sig10","brand":"SIG","name":"SIG10","w":10.83,"h":8.33,"d":5,"sw":10.08,"sh":7.58,"ratio":"4:3","needW":11.17,"needH":8.5,"landingPad":true,"sigproFloor":[11.58,15.5]},
+    {"id":"sig12","brand":"SIG","name":"SIG12","w":12.17,"h":9.33,"d":5,"sw":11.42,"sh":8.58,"ratio":"4:3","needW":12.5,"needH":9.5,"landingPad":true,"sigproFloor":[13.5,15.5]},
+    {"id":"cdiy10","brand":"Carl's Place","name":"Carl's Place DIY 7.7 x 10","w":10.4,"h":7.98,"d":4.93,"sw":9.23,"sh":6.93,"floor":true,"needW":10.75,"needH":8.17},
+    {"id":"cdiy13","brand":"Carl's Place","name":"Carl's Place DIY 7.7 x 13 (16:9)","w":13.61,"h":7.98,"d":4.93,"sw":12.44,"sh":7.0,"floor":true,"needW":14.0,"needH":8.17},
+    {"id":"cpro105","brand":"Carl's Place","name":"Carl's Place Pro 8 x 10.5","w":11.03,"h":8.5,"d":5,"sw":9.87,"sh":7.4,"floor":true,"deep":true,"pipe":0.18,"needW":11.42,"needH":8.67},
+    {"id":"cpro11","brand":"Carl's Place","name":"Carl's Place Pro 8.5 x 11","w":11.59,"h":8.92,"d":5,"sw":10.43,"sh":7.82,"floor":true,"deep":true,"pipe":0.18,"needW":11.92,"needH":9.08},
+    {"id":"cpro12","brand":"Carl's Place","name":"Carl's Place Pro 9 x 12","w":12.37,"h":9.5,"d":5,"sw":11.2,"sh":8.4,"floor":true,"deep":true,"pipe":0.18,"needW":12.75,"needH":9.67},
+    {"id":"cpro13","brand":"Carl's Place","name":"Carl's Place Pro 10 x 13","w":13.37,"h":10.25,"d":5,"sw":12.2,"sh":9.15,"floor":true,"deep":true,"pipe":0.18,"needW":13.75,"needH":10.42},
+    {"id":"cpro145","brand":"Carl's Place","name":"Carl's Place Pro 8.5 x 14.5 (16:9)","w":15.15,"h":8.92,"d":5,"sw":13.98,"sh":7.87,"floor":true,"deep":true,"pipe":0.18,"needW":15.5,"needH":9.08},
+    {"id":"cpro155","brand":"Carl's Place","name":"Carl's Place Pro 10 x 15.5 (16:10)","w":15.86,"h":10.25,"d":5,"sw":14.69,"sh":9.18,"floor":true,"deep":true,"pipe":0.18,"needW":16.25,"needH":10.42},
+    {"id":"sb1","brand":"GolfIn","name":"GolfIn SimBooth 1","w":11.08,"h":7.58,"d":4.02,"depthWithFloor":12.0,"sw":10.5,"sh":7.17,"floor":true,"pipe":0.42,"minRoom":[13,16,9],"needBehind":1,"options":{"halfWalls":525,"projBeam":325}},
+    {"id":"sb2","brand":"GolfIn","name":"GolfIn SimBooth 2","w":12.15,"h":8.58,"d":5,"depthWithFloor":12.0,"sw":11.75,"sh":8.17,"floor":true,"pipe":0.42,"minRoom":[13,16,9.58],"needBehind":1},
+    {"id":"sb3","brand":"GolfIn","name":"GolfIn SimBooth 3","w":14.08,"h":9.75,"d":9.38,"depthWithFloor":14.92,"sw":13.5,"sh":9.17,"floor":true,"pipe":0.5,"minRoom":[14.67,19,9.92],"needBehind":1,"needSides":1},
+    {"id":"sb4","brand":"GolfIn","name":"GolfIn SimBooth 4","w":15.92,"h":10.25,"d":12.06,"depthWithFloor":14.92,"sw":15.33,"sh":9.75,"floor":true,"pipe":0.5,"minRoom":[16.5,19,10.58],"needBehind":1,"needSides":1}
+  ],
+  "carlsProDepths": [5, 8, 10, 15],
+  "carlsNetExtensions": [6, 8, 10]
+}

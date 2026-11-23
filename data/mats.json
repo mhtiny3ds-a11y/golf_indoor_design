@@ -1,0 +1,22 @@
+{
+  "_meta": {"note":"Danh sách SIGPRO lấy từ dropdown app gốc. size_ft = [sâu theo hướng đánh, rộng ngang phòng]; cạnh dài nằm ngang phòng. Độ dày mặc định 2,5 in. Carl's và Fiberbuilt: app gốc có nhưng chưa trích – cần bổ sung.","default":"softy410"},
+  "brands": {
+    "sigpro": [
+      {"id":"softy410","nameVi":"Softy 4 x 10 (gợi ý)","size_ft":[4,10],"kind":"double"},
+      {"id":"super49","nameVi":"Super Softy 4 x 9","size_ft":[4,9],"kind":"double"},
+      {"id":"lite410","nameVi":"Softy LITE 4 x 10","size_ft":[4,10],"kind":"double"},
+      {"id":"teeline49","nameVi":"TeeLine 4 x 9, liền khối","size_ft":[4,9],"kind":"double"},
+      {"id":"softy47","nameVi":"Softy 4 x 7","size_ft":[4,7],"kind":"single"},
+      {"id":"super46","nameVi":"Super Softy 4 x 6","size_ft":[4,6],"kind":"single"},
+      {"id":"lite47","nameVi":"Softy LITE 4 x 7","size_ft":[4,7],"kind":"single"},
+      {"id":"lite45","nameVi":"Softy LITE 4 x 5","size_ft":[4,5],"kind":"single"},
+      {"id":"teeline47","nameVi":"TeeLine 4 x 7, liền khối","size_ft":[4,7],"kind":"single"},
+      {"id":"teeline45","nameVi":"TeeLine 4 x 5, liền khối","size_ft":[4,5],"kind":"single"}
+    ],
+    "carls": "TODO",
+    "fiberbuilt": "TODO"
+  },
+  "thickness_in": 2.5,
+  "hittingZoneDefault_in": [28, 21],
+  "layoutModes": {"auto":"Tốt nhất cho phòng","double":"Rộng gấp đôi, tee giữa","single":"Một phía, tee lệch"}
+}

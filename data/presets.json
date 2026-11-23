@@ -1,0 +1,18 @@
+{
+  "_meta": {"units":"ft","note":"4 preset đầu khớp app gốc. 'studio_ref' là phòng tham chiếu của app gốc, dùng để kiểm thử (kết quả mong đợi: Vừa, không cảnh báo). 'golfcons_showroom' chờ số liệu thật."},
+  "items": [
+    {"id":"basement","nameVi":"Tầng hầm","W":13,"D":18,"H":9},
+    {"id":"garage","nameVi":"Gara 1 ô","W":12,"D":20,"H":9},
+    {"id":"bonus","nameVi":"Phòng thêm","W":14,"D":18,"H":10,"default":true},
+    {"id":"big","nameVi":"Phòng lớn","W":16,"D":22,"H":10.5},
+    {"id":"studio_ref","nameVi":"Phòng mẫu tham chiếu","W":15,"D":18.67,"H":9.83,
+      "state":{"screen":"built","scr":"custom","scrW":12.67,"scrH":8,"scrUp":0.42,"scrGap":1.1667,"fin":"curt","finRun":10,"proj":"ak700st","zoom":0,"matBrand":"sigpro","mat":"super49","matMode":"auto","turf":"room","turfKind":"partner","recess":true,"pc":"cab","tvs":1,"tvIn":43,"stSide":"auto","stZ":50,"teeDist":10.5},
+      "expect":{"overall":"ok","throw_ft":9.83,"nativeImage_ft":[14.25,8.0],"screenFill":"16:10","teeToBack_ft":7}},
+    {"id":"golfcons_showroom","nameVi":"Phòng mẫu GolfCons","W":null,"D":null,"H":null,"todo":"Điền số liệu một phòng GolfCons đã thi công"}
+  ],
+  "vnSuggestions": [
+    {"nameVi":"Phòng khách nhà phố (4 × 6 m, trần 3 m)","W":13.12,"D":19.69,"H":9.84},
+    {"nameVi":"Phòng VIP quán (5 × 7 m, trần 3,3 m)","W":16.4,"D":22.97,"H":10.83},
+    {"nameVi":"Tầng hầm biệt thự (4,5 × 6,5 m, trần 2,8 m)","W":14.76,"D":21.33,"H":9.19}
+  ]
+}

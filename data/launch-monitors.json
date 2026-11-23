@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "units": "feet thập phân",
+    "source": "Tham số runtime của app gốc (GSV Sim Builder 0.25.2) + bảng công bố trên trang, đọc 21/11/2026. Thông số hãng đọc 2–4/10/2026.",
+    "fields": {
+      "type": "overhead = treo trần | side = cạnh bóng (camera) | radar = sau bóng",
+      "fwd": "overhead: khoảng từ tee tới cảm biến theo hướng màn (âm = sau tee)",
+      "hMin,hMax": "độ cao lắp khuyến nghị (ft); ref=floor: tính từ sàn, còn lại từ mặt đánh",
+      "lowTo": "độ cao thấp nhất vẫn chạy (cảnh báo)",
+      "zone": "chiều sâu vùng đánh hiển thị (ft)",
+      "minFlight": "tee→màn tối thiểu theo hãng; flightLeast: mức thấp nhất GSV chấp nhận (warn); idealFlight/maxFlight: lý tưởng",
+      "dist": "side: khoảng cách từ thiết bị tới bóng",
+      "bMin,bRec,bMax": "radar: khoảng thiết bị tới bóng (min/khuyến nghị/max)",
+      "dim": "[rộng, cao, sâu] thân máy (ft) – xấp xỉ",
+      "shortestRoom": "radar: chiều sâu phòng ngắn nhất app gốc chấp nhận (ft)"
+    }
+  },
+  "items": [
+    {"id":"eyexo2","name":"Uneekor EYE XO2","type":"overhead","fwd":3.5,"hMin":9,"hMax":10,"ref":"floor","zone":2.33,"minFlight":9,"flightLeast":8,"dim":[3.03,0.21,0.49],"specVi":"Cảm biến cách sàn 9–10 ft, 3'6\" trước tee; tee→màn 9–10 ft (manual), trung tâm hỗ trợ ghi 10 ft tối thiểu, 12 ft khuyến nghị. Thực tế 8 ft vẫn ổn."},
+    {"id":"eyexo","name":"Uneekor EYE XO","type":"overhead","fwd":3.5,"hMin":9,"hMax":10,"ref":"floor","zone":1.0,"minFlight":9,"dim":[2.54,0.21,0.5]},
+    {"id":"eyexr","name":"Uneekor EYE XR","type":"overhead","fwd":-3.5,"hMin":9,"hMax":10,"ref":"floor","zone":0.98,"minFlight":10,"idealFlight":12,"dim":[1.87,0.26,0.33],"specVi":"Treo 9–10 ft, 3'6\" SAU tee; tee→màn 10 ft tối thiểu, 12 ft khuyến nghị."},
+    {"id":"proteevx","name":"ProTee VX","type":"overhead","fwd":3.44,"hMin":9,"hMax":10,"lowTo":8.67,"zone":1.75,"dim":[2.72,0.56,0.66],"specVi":"Trần tới mặt đánh 9–10 ft; chạy tốt ở 8'8\", 8'6\" thấp nhưng dùng được, không khuyên 8'4\". Cách vùng đánh 3'4\"–3'7\" (vẽ phía trước tee). Không công bố tee→màn."},
+    {"id":"falcon","name":"Foresight Falcon","type":"overhead","fwd":4,"hMin":9.5,"hMax":10.5,"zone":2.33,"minFlight":10,"maxFlight":12,"dim":[3.64,0.44,0.89],"specVi":"Trần lý tưởng 9'6\"–10'6\", thảm cách Falcon 4 ft; tee→màn 10–12 ft."},
+    {"id":"tmio","name":"Trackman iO","type":"overhead","fwd":3.33,"hMin":8.83,"hMax":10.5,"zone":1.31,"minFlight":8.17,"idealFlight":10,"dim":[1.09,0.35,1.09],"specVi":"Cỏ tới trần 8'10\"–10'6\" tuỳ phiên bản Low/Mid/High; đặt phía màn so với tee; tee→màn 8'2\" tối thiểu, 10 ft khuyến nghị."},
+    {"id":"apogee","name":"TruGolf APOGEE","type":"overhead","fwd":1.92,"hMin":9,"hMax":10,"zone":0.83,"dim":[3.17,0.46,0.67],"specVi":"9–10 ft trên mặt đánh, 21–25 in trước tee tuỳ trần."},
+    {"id":"rigel2","name":"GolfJoy Rigel 2 (GR2)","type":"overhead","fwd":3.61,"hMin":9,"hMax":10.17,"zone":1.31,"dim":[3.28,0.33,0.53]},
+    {"id":"rigel3","name":"GolfJoy Rigel 3 (GR3)","type":"overhead","fwd":3.61,"hMin":9,"hMax":10.17,"zone":1.64,"dim":[3.28,0.23,0.53]},
+    {"id":"rigel3pro","name":"GolfJoy Rigel 3 Pro","type":"overhead","fwd":3.61,"hMin":9,"hMax":10.17,"zone":1.97,"dim":[2.48,0.23,0.53],"specVi":"Trần 9 ft–10'2\", cách tee 3'7\" (gắn phía trước)."},
+    {"id":"gcquad","name":"Foresight GCQuad","type":"side","dist":1.83,"dim":[0.33,1.04,0.58],"specVi":"Cách bóng khoảng 22 in."},
+    {"id":"quadmax","name":"Foresight QuadMAX","type":"side","dist":1.83,"dim":[0.33,1.04,0.58]},
+    {"id":"gc3","name":"Foresight GC3","type":"side","dist":2.0,"dim":[0.42,1.0,0.5],"specVi":"Cách bóng khoảng 2 ft."},
+    {"id":"launchpro","name":"Bushnell Launch Pro","type":"side","dist":2.0,"dim":[0.42,1.0,0.5]},
+    {"id":"gc2","name":"Foresight GC2 (2026)","type":"side","dist":1.83,"dim":[0.38,0.99,0.45],"specVi":"Hãng chưa công bố; vùng đánh đo được ~17–28 in, vẽ bóng cách 22 in."},
+    {"id":"stmax","name":"SkyTrak ST MAX","type":"side","dist":1.25,"dim":[0.21,0.57,0.48],"specVi":"Bóng đặt trên chấm laser đỏ."},
+    {"id":"square","name":"Square Golf","type":"side","dist":1.38,"dim":[0.23,0.62,0.23],"specVi":"Tâm vùng đánh cách 16,5 in phía trước thiết bị."},
+    {"id":"omni","name":"Square Golf OMNI","type":"side","dist":1.56,"dim":[0.2,1.18,0.23],"specVi":"Vùng sẵn sàng 14–24 in phía trước thiết bị."},
+    {"id":"r50","name":"Garmin Approach R50","type":"side","dist":1.5,"dim":[0.63,1.38,0.88],"specVi":"Khoảng 1'6\" sang bên tee."},
+    {"id":"eyemini","name":"Uneekor EYE MINI","type":"side","dist":1.33,"dim":[0.55,1.31,0.54]},
+    {"id":"eyeminilite","name":"Uneekor EYE MINI LITE","type":"side","dist":1.33,"dim":[0.55,1.31,0.54],"dimNote":"giả định giống EYE MINI – cần xác minh"},
+    {"id":"spica3","name":"GolfJoy Spica 3","type":"side","dist":1.31,"dim":null,"specVi":"Đại lý ghi 15 3/4 in từ thiết bị tới giữa vùng đánh."},
+    {"id":"mevogen2","name":"FlightScope Mevo Gen2","type":"radar","bMin":7,"bRec":8,"bMax":9,"minFlight":8,"idealFlight":10,"shortestRoom":16.5},
+    {"id":"mevoplus","name":"FlightScope Mevo+","type":"radar","bMin":7,"bRec":8,"bMax":9,"minFlight":8,"idealFlight":13,"shortestRoom":16.5},
+    {"id":"r10","name":"Garmin Approach R10","type":"radar","bMin":6,"bRec":7,"bMax":8,"minFlight":8,"shortestRoom":15.5},
+    {"id":"mlm2pro","name":"Rapsodo MLM2PRO","type":"radar","bMin":6.5,"bRec":7.5,"bMax":8.5,"minFlight":8,"shortestRoom":16},
+    {"id":"mlm2xpro","name":"Rapsodo MLM2XPRO","type":"radar","bMin":6.5,"bRec":7.5,"bMax":8.5,"minFlight":8,"shortestRoom":16,"specVi":"Hãng chưa công bố tee→màn; dùng 8 ft."},
+    {"id":"kit","name":"Full Swing KIT","type":"radar","bMin":8,"bRec":10,"bMax":10,"minFlight":8,"maxFlight":10,"shortestRoom":17.5},
+    {"id":"tm4","name":"Trackman 4","type":"radar","bMin":6,"bRec":7,"bMax":9.5,"minFlight":10,"idealFlight":12,"shortestRoom":17.5},
+    {"id":"idra2","name":"GolfIn IDRA II","type":"overhead","fwd":3.93,"hMin":8.25,"hMax":10,"zone":2.67,"dim":null,"specVi":"Sàn tới trần 99–120 in; bóng cách mép sau tấm gắn 52–63 in theo bảng của GolfIn (nội suy theo độ cao)."}
+  ]
+}

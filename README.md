@@ -1,2 +1,41 @@
-# golf_indoor_design
-Thiết kế Golf mô phỏng
+# golf_indoor_design — GolfCons Sim Builder
+
+Thiết kế Golf mô phỏng: trình lập kế hoạch phòng golf 3D tiếng Việt, xây theo bộ đặc tả trong `docs/` và dữ liệu trong `data/`.
+
+## Lệnh
+
+```bash
+npm install
+npm run dev      # chạy thử tại http://localhost:5173
+npm test         # 30 ca kiểm thử nghiệm thu (spec-tests/acceptance-cases.md → tests/acceptance.test.ts)
+npm run build    # bản production vào dist/
+SINGLEFILE=1 npx vite build   # một file index.html tự chứa (dễ nhúng/chia sẻ)
+```
+
+## Đưa lên web
+
+`npm run build` tạo thư mục `dist/` gồm trang tĩnh (đường dẫn tương đối, `base: './'`), đưa lên bất kỳ hosting tĩnh nào:
+GitHub Pages, Netlify, Vercel, Cloudflare Pages hoặc thư mục con trên website hiện có.
+Muốn một file duy nhất để nhúng: `SINGLEFILE=1 npx vite build` → `dist/index.html`.
+
+## Cấu trúc
+
+```
+src/engine/   hàm thuần, không DOM: units, rules (hằng số [C]/[S]), data, state,
+              solve.ts (solve(state) → Plan), checks.ts (checks(plan) → Check[]),
+              summary.ts (bảng thông số, danh sách thiết bị, tóm tắt), share.ts (#b=… nén lz-string)
+src/scene/    three.js: cảnh, 4 góc nhìn, nhãn đo HTML, kéo-thả tee, animation swing, xuất ảnh
+src/ui/       cột trái (8 mục), cột phải (kết luận, kiểm tra, thiết bị), helper form
+data/ config/ dữ liệu thiết bị và cấu hình thương hiệu/đối tác (partners.json)
+```
+
+## Ghi chú triển khai
+
+- Đơn vị nội bộ feet; hiển thị mặc định mét, có công tắc ft-in.
+- Hằng số suy luận [S] nằm trong `src/engine/rules.ts`. Hai hằng số thêm so với spec:
+  `swingPeakBack` và `swingLatDrop` (đỉnh swing nằm trên vai golfer, không trên đường bóng) để khớp ca C2.
+- `data/presets.json`: thêm `"zoom": 0` cho "Phòng mẫu tham chiếu" (spec ghi "zoom≈0").
+- Chọn máy chiếu tự động ưu tiên: không fail/warn → không keystone → offset thấp → 4K → thứ tự dữ liệu.
+- Danh sách thảm Carl's / Fiberbuilt và xe phổ biến VN chưa có số liệu (spec để TODO).
+- Form tư vấn POST tới `config/partners.json > leadEndpoint`; để trống thì hiện nội dung để sao chép.
+- Chưa làm: AR "Xem trong phòng bạn", trang nội dung SEO (giai đoạn 10).

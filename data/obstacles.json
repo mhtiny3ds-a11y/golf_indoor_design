@@ -1,0 +1,12 @@
+{
+  "_meta": {"max": 6, "note": "Kích thước khởi tạo là ước tính điển hình (app gốc: 'bắt đầu bằng cỡ thật, cho nhập số đo riêng'). Đơn vị ft.", "estimate": true},
+  "types": [
+    {"id":"beam","nameVi":"Dầm gỗ / ốp hộp","w":0.46,"drop":0.77},
+    {"id":"ibeam","nameVi":"Dầm thép chữ I","w":0.33,"drop":0.67},
+    {"id":"duct","nameVi":"Ống gió chữ nhật","w":1.0,"drop":0.67},
+    {"id":"round","nameVi":"Ống gió tròn","w":0.67,"drop":0.67},
+    {"id":"soffit","nameVi":"Trần giật cấp (soffit)","w":2.0,"drop":1.0},
+    {"id":"garage","nameVi":"Cửa gara","doorW":9,"doorH":7,"trackAboveDoor_in":3,"opener":["rail","side"],"railMotorDrop":1.0,"countsTowardMax":true}
+  ],
+  "dir": {"across":"Ngang phòng","along":"Dọc phòng"}
+}

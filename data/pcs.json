@@ -1,0 +1,23 @@
+{
+  "_meta": {"source":"Bảng công bố (SurfThing + yêu cầu PC của từng phần mềm, đọc 12/10/2026). Case chung: 17 13/16 × 8 1/16 × 14 5/16 in (sâu × rộng × cao). Đặt dưới kệ/màn treo, cạnh dài dọc tường; trong tủ PC (~20 in sâu).","rule":"Chọn máy thấp nhất đạt yêu cầu phần mềm tại độ phân giải máy chiếu. Không chọn phần mềm → HD: SG3-5602, 4K: SG3-5702Ti."},
+  "pcs": [
+    {"id":"sg3-5602","name":"SurfThing SG3-5602","gpu":"RTX 5060 8GB","cpu":"Intel Core Ultra 5 225F","ram":"16GB DDR5","cooling":"khí","descVi":"Ổn định ở 1080p","rank":1},
+    {"id":"sg3-5702","name":"SurfThing SG3-5702","gpu":"RTX 5070 12GB","cpu":"Intel Core Ultra 5 225F","ram":"32GB DDR5","cooling":"khí","descVi":"Mức vào cửa tốt cho màn 4K, nhiều thiết bị ngoại vi","rank":2},
+    {"id":"sg3-5702ti","name":"SurfThing SG3-5702Ti","gpu":"RTX 5070 Ti 16GB","cpu":"Intel Core Ultra 5 225F","ram":"32GB DDR5","cooling":"khí","descVi":"Mô phỏng 4K tốt hơn, chạy kèm camera swing và phần mềm khác","rank":3},
+    {"id":"sg3-5802","name":"SurfThing SG3-5802","gpu":"RTX 5080 16GB","cpu":"Intel Core Ultra 7 265F","ram":"32GB DDR5","cooling":"nước","descVi":"Mọi phần mềm trên thị trường ở 4K","rank":4}
+  ],
+  "softwareMatrix": {
+    "gspro":         {"name":"GSPro","HD":"sg3-5602","4K":"sg3-5702"},
+    "fsx":           {"name":"Foresight FSX Play","HD":"sg3-5602","4K":"sg3-5702ti"},
+    "pureplay":      {"name":"PurePlay","HD":"sg3-5602","4K":"sg3-5702"},
+    "premier":       {"name":"Foresight Premier","HD":"sg3-5702","4K":"sg3-5802"},
+    "tvg_tm4":       {"name":"Trackman Virtual Golf (Trackman 4)","HD":"sg3-5602","4K":"sg3-5702ti"},
+    "tvg_io":        {"name":"Trackman Virtual Golf (Trackman iO)","HD":"sg3-5702ti","4K":"sg3-5802"}
+  },
+  "furniture": {
+    "cabinet": {"nameVi":"Tủ PC + màn cảm ứng 27\"","depth_in":20,"estimate":true},
+    "shelf":   {"nameVi":"PC tower + kệ tường + màn cảm ứng 27\"","estimate":true},
+    "stand":   {"nameVi":"Chân đứng có khay laptop + màn 32\"/43\"","estimate":true},
+    "touchscreens_in": [27, 32, 43]
+  }
+}
