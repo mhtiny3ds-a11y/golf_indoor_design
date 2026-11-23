@@ -41,7 +41,9 @@ function feetCentre(root: THREE.Object3D, box: THREE.Box3): THREE.Vector3 {
 /** Bắt đầu nạp (một lần cho mỗi file). onReady được gọi khi nạp xong, kể cả khi thất bại. */
 export function requestModel(path: string, onReady: () => void): void {
   if (cache.has(path)) return;
-  const p = loader.loadAsync(BASE + path).then((g: GLTF): LoadedModel => {
+  // Bản nhúng (một file HTML) có thể gắn sẵn mô hình dạng data: URL trong window.__MODELS__
+  const inline = (window as unknown as { __MODELS__?: Record<string, string> }).__MODELS__?.[path];
+  const p = loader.loadAsync(inline ?? BASE + path).then((g: GLTF): LoadedModel => {
     const scene = g.scene;
     scene.traverse(o => {
       const m = o as THREE.Mesh;
