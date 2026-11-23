@@ -28,7 +28,6 @@ let okOpen = false;
 
 // ---------- DOM ----------
 document.title = PARTNERS.brand.name;
-$('#brandName').textContent = PARTNERS.brand.name.replace(' Sim Builder', '');
 $('#tagline').textContent = PARTNERS.brand.tagline;
 const scene = new SceneView($('#viewport'));
 scene.view = S.view as View;

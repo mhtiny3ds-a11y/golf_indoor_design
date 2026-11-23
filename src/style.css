@@ -18,12 +18,17 @@ button, input, select, textarea { font: inherit; color: inherit }
 /* Header */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  border-bottom: 1px solid var(--line) }
-.brand { display: flex; align-items: center; gap: 10px; min-width: 0 }
-.brand b { font: 700 22px/1 var(--f-display); letter-spacing: .02em; text-transform: uppercase; display: block }
-.brand .sb { color: var(--lime) }
-.brand small { color: var(--muted); font-size: 12px }
+  border-bottom: 1px solid #dfe6e2; background: #ffffff; color: #11523b }
+.brand { display: flex; align-items: center; gap: 16px; min-width: 0 }
+.brand-logo { height: 46px; width: auto; display: block }
+.brand-app { border-left: 1px solid #dfe6e2; padding-left: 16px; display: flex; flex-direction: column }
+.brand-app b { font: 700 20px/1 var(--f-display); letter-spacing: .04em; text-transform: uppercase; color: #11523b }
+.brand-app small { color: #5f6663; font-size: 12px }
 .actions { display: flex; gap: 8px; flex-wrap: wrap }
+.top .btn { background: #f2f6f3; border-color: #d5ded9; color: #11523b }
+.top .btn:hover { border-color: #11523b }
+.top .btn.primary { background: #11523b; border-color: #11523b; color: #ffffff }
+.top .btn.primary:hover { filter: brightness(1.15) }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); background: #1a2823; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; text-decoration: none; color: var(--fg); white-space: nowrap }
 .btn:hover { border-color: #3e554c }
@@ -185,6 +190,7 @@ code { font-family: var(--f-mono); font-size: 11.5px }
   .status { min-width: 0 }
   .actions .ghost { display: none }
 }
+@media (max-width: 640px) { .brand-app { display: none } .brand-logo { height: 38px } }
 @media (max-width: 480px) {
   .actions { width: 100% }
   .actions .btn { flex: 1; padding: 8px 6px; font-size: 12.5px }
