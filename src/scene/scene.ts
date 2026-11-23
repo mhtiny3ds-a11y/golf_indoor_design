@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { Plan } from '../engine/solve';
 import type { Box } from '../engine/geom';
 import { fmtLen, fmtGap, fmtSmall } from '../engine/units';
+import { requestModel, getModel } from './models';
 import { courseTexture, netTexture, turfTexture, padTexture, curtainTexture } from './textures';
 
 export type View = '3d' | 'top' | 'side' | 'front';
@@ -29,6 +30,11 @@ export class SceneView {
   golfer: THREE.Group | null = null;
   swingArms: THREE.Group[] = [];
   swingT = -1;
+  mixer: THREE.AnimationMixer | null = null;
+  swingClip: THREE.AnimationClip | null = null;
+  private clock = new THREE.Clock();
+  /** true khi golfer đang là mô hình thực tế (.glb) */
+  realGolfer = false;
   moveMode = false;
   onDragTee?: (x: number, z: number) => void;
   focusTargets = new Map<string, THREE.Vector3>();
@@ -61,6 +67,7 @@ export class SceneView {
     this.scene.add(this.root);
     new ResizeObserver(() => this.resize()).observe(host);
     this.bindDrag();
+    requestModel('people/golfer.glb', () => { if (this.plan) this.update(this.plan); });
     const loop = (t: number) => { this.tick(t); requestAnimationFrame(loop); };
     requestAnimationFrame(loop);
   }
@@ -332,6 +339,29 @@ export class SceneView {
 
   private buildGolfer(p: Plan) {
     const k = p.k, t = p.tees[0], hand = t.hand === 'L' ? 'L' : 'R';
+    this.mixer = null; this.swingClip = null; this.realGolfer = false;
+    const real = getModel('people/golfer.glb');
+    if (real) {
+      // Mô hình chuẩn: mét, Y lên, mặt trước +Z, golfer tay phải đánh về +X; giả định người cao 1,75 m (5'9").
+      // Cảnh dùng feet → nhân 1/0,3048 và co theo chiều cao golfer (k).
+      const inner = new THREE.Group();
+      const obj = real.instance;
+      obj.position.set(-real.feet.x, -real.feet.y, -real.feet.z);
+      inner.add(obj);
+      const s = k / 0.3048;
+      inner.scale.set(hand === 'L' ? -s : s, s, s);              // tay trái: lật đối xứng
+      const g = new THREE.Group();
+      g.add(inner);
+      g.rotation.y = hand === 'R' ? Math.PI / 2 : -Math.PI / 2; // hướng đánh (+X mô hình) → về phía màn (−z phòng)
+      const gx = hand === 'R' ? t.x - 2.0 * k : t.x + 2.0 * k;
+      g.position.set(this.X(gx), p.floorRaise + p.standY, p.teeZ);
+      this.root.add(g);
+      this.golfer = g;
+      this.realGolfer = true;
+      const clip = real.clips.find(c => /swing/i.test(c.name)) ?? real.clips[0] ?? null;
+      if (clip) { this.mixer = new THREE.AnimationMixer(obj); this.swingClip = clip; }
+      return;
+    }
     const g = new THREE.Group();
     const skin = this.mat(0xd2a07c), shirt = this.mat(0xdfe5e2), pants = this.mat(0x2a2f36), shoe = this.mat(0xf4f4f4), dark = this.mat(0x1d2124);
     const cap = (r: number, l: number, mm: THREE.Material, x: number, y: number, z: number, rx = 0, rz = 0) => {
@@ -439,7 +469,16 @@ export class SceneView {
     }
   }
 
-  playSwing() { this.swingT = 0; }
+  /** Phát swing. Trả về false nếu golfer hiện tại không có animation. */
+  playSwing(): boolean {
+    if (this.realGolfer) {
+      if (!this.mixer || !this.swingClip) return false;
+      const a = this.mixer.clipAction(this.swingClip);
+      a.reset(); a.setLoop(THREE.LoopOnce, 1); a.clampWhenFinished = false; a.play();
+      return true;
+    }
+    this.swingT = 0; return true;
+  }
 
   snapshot(caption: string): string {
     this.renderer.render(this.scene, this.camera);
@@ -485,6 +524,8 @@ export class SceneView {
 
   // ---------- frame ----------
   private tick(t: number) {
+    const dt = this.clock.getDelta();
+    this.mixer?.update(dt);
     this.controls.update();
     if (this.swingT >= 0 && this.swingArms.length) {
       this.swingT += 1 / 60;

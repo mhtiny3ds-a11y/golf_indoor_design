@@ -24,6 +24,14 @@ Repo có sẵn workflow `.github/workflows/deploy-pages.yml`: mỗi lần đẩy
 Bật một lần: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 Đừng chọn "Deploy from a branch": khi đó GitHub đăng `index.html` gốc (trỏ tới `src/main.ts`), trang hiện chữ trơn, không có giao diện và 3D.
 
+## Mô hình 3D thực tế (.glb)
+
+Đặt file gốc vào `models-src/` theo đúng tên trong `docs/danh-sach-mo-hinh-3d.xlsx` (ví dụ `models-src/people/golfer.glb`).
+`npm run dev` / `npm run build` tự chạy `npm run models` để chuẩn hoá (đổi vật liệu specular-glossiness sang metal-roughness, gộp node)
+và ghi ra `public/models/` (không commit). Vật nào chưa có file thì app dùng khối hình thay thế.
+
+Đã có: golfer (tư thế lên gậy, tĩnh — chưa có animation swing).
+
 ## Cấu trúc
 
 ```

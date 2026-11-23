@@ -241,7 +241,7 @@ $('#moveBtn').addEventListener('click', () => {
   toast(scene.moveMode ? 'Kéo thảm/tee trên sàn để di chuyển' : 'Đã tắt tự di chuyển');
   if (scene.moveMode && scene.view === '3d') { scene.setView('top'); setViewTabs('top'); }
 });
-$('#swingBtn').addEventListener('click', () => scene.playSwing());
+$('#swingBtn').addEventListener('click', () => { if (!scene.playSwing()) toast('Mô hình golfer này chưa có animation swing'); });
 $('#zoomIn').addEventListener('click', () => scene.zoomBy(1.2));
 $('#zoomOut').addEventListener('click', () => scene.zoomBy(1 / 1.2));
 $('#resetCam').addEventListener('click', () => scene.setView(scene.view, true));
