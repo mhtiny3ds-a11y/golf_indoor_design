@@ -18,6 +18,12 @@ SINGLEFILE=1 npx vite build   # một file index.html tự chứa (dễ nhúng/c
 GitHub Pages, Netlify, Vercel, Cloudflare Pages hoặc thư mục con trên website hiện có.
 Muốn một file duy nhất để nhúng: `SINGLEFILE=1 npx vite build` → `dist/index.html`.
 
+### GitHub Pages
+
+Repo có sẵn workflow `.github/workflows/deploy-pages.yml`: mỗi lần đẩy lên `main`, GitHub tự chạy test, build và đăng `dist/`.
+Bật một lần: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+Đừng chọn "Deploy from a branch": khi đó GitHub đăng `index.html` gốc (trỏ tới `src/main.ts`), trang hiện chữ trơn, không có giao diện và 3D.
+
 ## Cấu trúc
 
 ```
